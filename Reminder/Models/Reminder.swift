@@ -7,6 +7,7 @@
 
 import Foundation
 
+// reminder data model
 struct Reminder {
     var title: String
     var dueDate: Date
@@ -16,6 +17,7 @@ struct Reminder {
 
 
 #if DEBUG
+// sample reminders data
 extension Reminder {
     static var sampleData = [
         Reminder(title: "Submit reimbursement report",
