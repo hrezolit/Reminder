@@ -31,6 +31,7 @@ class ReminderListViewController: UICollectionViewController {
             cell.contentConfiguration = contentConfiguration
         }
         
+        // configures and returns a cell for a collection view
         dataSource = DataSource(collectionView: collectionView) {
             (collectionView: UICollectionView, indexPath: IndexPath, itemIdentifier: String) in
             
