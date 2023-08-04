@@ -43,6 +43,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D59DAF572A7CAC5900AB36DA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D59DAF532A7CA54500AB36DA /* UIColor+Today.swift */,
+				D59DAF552A7CA5E900AB36DA /* Date+Today.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		D5A6A1292A7B82BA006FC002 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +76,7 @@
 				D5B8484A2A7BD7AE00B327B6 /* Models */,
 				D5B8484B2A7BD7B600B327B6 /* Views */,
 				D5B8484C2A7BD7C400B327B6 /* Controllers */,
+				D59DAF572A7CAC5900AB36DA /* Extensions */,
 				D5A6A13B2A7B82BA006FC002 /* Main.storyboard */,
 				D5A6A13E2A7B82BD006FC002 /* Assets.xcassets */,
 				D5A6A1402A7B82BD006FC002 /* LaunchScreen.storyboard */,
@@ -79,8 +89,6 @@
 			isa = PBXGroup;
 			children = (
 				D5B8484D2A7BD80400B327B6 /* Reminder.swift */,
-				D59DAF532A7CA54500AB36DA /* UIColor+Today.swift */,
-				D59DAF552A7CA5E900AB36DA /* Date+Today.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
