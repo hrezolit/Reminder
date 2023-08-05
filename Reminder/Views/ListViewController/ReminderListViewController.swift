@@ -30,6 +30,7 @@ class ReminderListViewController: UICollectionViewController {
                                                                 item: itemIdentifier)
         }
         
+        // initializing snapshot
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(Reminder.sampleData.map { $0.title })

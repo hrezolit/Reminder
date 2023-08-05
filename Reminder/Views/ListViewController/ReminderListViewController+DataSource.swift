@@ -13,6 +13,7 @@ extension ReminderListViewController {
     // snapshot represents the state of data at a specific point in time
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
     
+    // cell registration and configuration
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: String) {
         let reminder = Reminder.sampleData[indexPath.item]
         var contentConfiguration = cell.defaultContentConfiguration()
@@ -21,5 +22,10 @@ extension ReminderListViewController {
         contentConfiguration.secondaryText = reminder.dueDate.dayAndTimeText
         contentConfiguration.secondaryTextProperties.font = UIFont.preferredFont(forTextStyle: .caption1)
         cell.contentConfiguration = contentConfiguration
+        
+        var backgroundConfiguration = UIBackgroundConfiguration.listGroupedCell()
+        
+        backgroundConfiguration.backgroundColor = .todayListCellBackground
+        cell.backgroundConfiguration = backgroundConfiguration
     }
 }
