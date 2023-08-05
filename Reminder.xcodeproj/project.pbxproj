@@ -16,6 +16,7 @@
 		D5A6A1422A7B82BD006FC002 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A6A1402A7B82BD006FC002 /* LaunchScreen.storyboard */; };
 		D5B8484E2A7BD80400B327B6 /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8484D2A7BD80400B327B6 /* Reminder.swift */; };
 		D5B848502A7BDB3900B327B6 /* ReminderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B8484F2A7BDB3900B327B6 /* ReminderListViewController.swift */; };
+		D5E329222A7DF931008BF1E1 /* ReminderListViewController+DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5E329212A7DF931008BF1E1 /* ReminderListViewController+DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		D5A6A1432A7B82BD006FC002 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5B8484D2A7BD80400B327B6 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		D5B8484F2A7BDB3900B327B6 /* ReminderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderListViewController.swift; sourceTree = "<group>"; };
+		D5E329212A7DF931008BF1E1 /* ReminderListViewController+DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderListViewController+DataSource.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 		D5B8484B2A7BD7B600B327B6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D5B8484F2A7BDB3900B327B6 /* ReminderListViewController.swift */,
+				D5E329202A7DF89D008BF1E1 /* ListViewController */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +108,15 @@
 			children = (
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D5E329202A7DF89D008BF1E1 /* ListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D5B8484F2A7BDB3900B327B6 /* ReminderListViewController.swift */,
+				D5E329212A7DF931008BF1E1 /* ReminderListViewController+DataSource.swift */,
+			);
+			path = ListViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +194,7 @@
 				D5A6A1362A7B82BA006FC002 /* AppDelegate.swift in Sources */,
 				D59DAF542A7CA54500AB36DA /* UIColor+Today.swift in Sources */,
 				D59DAF562A7CA5E900AB36DA /* Date+Today.swift in Sources */,
+				D5E329222A7DF931008BF1E1 /* ReminderListViewController+DataSource.swift in Sources */,
 				D5A6A1382A7B82BA006FC002 /* SceneDelegate.swift in Sources */,
 				D5B848502A7BDB3900B327B6 /* ReminderListViewController.swift in Sources */,
 			);

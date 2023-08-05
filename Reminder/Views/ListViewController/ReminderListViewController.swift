@@ -9,10 +9,6 @@ import UIKit
 
 class ReminderListViewController: UICollectionViewController {
     
-    typealias DataSource = UICollectionViewDiffableDataSource<Int, String>
-    // snapshot represents the state of data at a specific point in time
-    typealias Snapshot = NSDiffableDataSourceSnapshot<Int, String>
-    
     var dataSource: DataSource!
     
     override func viewDidLoad() {
@@ -23,15 +19,7 @@ class ReminderListViewController: UICollectionViewController {
         collectionView.collectionViewLayout = listLayout
         
         // cell registration
-        let cellRegistration = UICollectionView.CellRegistration {
-            (cell: UICollectionViewListCell, indexPath: IndexPath, itemIdentifier: String) in
-            
-            let reminder = Reminder.sampleData[indexPath.item]
-            var contentConfiguration = cell.defaultContentConfiguration()
-            
-            contentConfiguration.text = reminder.title
-            cell.contentConfiguration = contentConfiguration
-        }
+        let cellRegistration = UICollectionView.CellRegistration(handler: cellRegistrationHandler)
         
         // configures and returns a cell for a collection view
         dataSource = DataSource(collectionView: collectionView) {

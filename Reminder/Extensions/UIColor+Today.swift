@@ -7,6 +7,7 @@
 
 import UIKit
 
+// extending UIColor with custom colors set from assets
 extension UIColor {
     static var todayDetailCellTint: UIColor {
         UIColor(named: "TodayDetailCellTint") ?? .tintColor
