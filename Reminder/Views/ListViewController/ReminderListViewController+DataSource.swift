@@ -13,9 +13,27 @@ extension ReminderListViewController {
     // snapshot represents the state of data at a specific point in time
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
+    // method for updating snapshot
+    func updateSnapshot(reloading ids: [Reminder.ID] = []) {
+        
+        // initializing snapshot
+        var snapshot = Snapshot()
+        snapshot.appendSections([0])
+        snapshot.appendItems(Reminder.sampleData.map { $0.id })
+        snapshot.appendItems(reminders.map { $0.id})
+        
+        if !ids.isEmpty {
+            snapshot.reloadItems(ids)
+        }
+            dataSource.apply(snapshot)
+    }
+    
     // cell registration and configuration
-    func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, id: Reminder.ID) {
-        let reminder = reminders[indexPath.item]
+    func cellRegistrationHandler(cell: UICollectionViewListCell,
+                                 indexPath: IndexPath,
+                                 id: Reminder.ID) {
+        
+        let reminder = reminder(withId: id)
         
         // cell config
         var contentConfiguration = cell.defaultContentConfiguration()
@@ -39,7 +57,7 @@ extension ReminderListViewController {
     }
     
     // accepts a reminder identifier and returns the corresponding reminder from the reminders array
-    func remider(withId id: Reminder.ID) -> Reminder {
+    func reminder(withId id: Reminder.ID) -> Reminder {
         let index = reminders.indexOfReminder(withId: id)
         
         return reminders[index]
@@ -53,9 +71,11 @@ extension ReminderListViewController {
     
     // fetchin a reminder from model
     func completeReminder(withId id: Reminder.ID) {
-        var remider = remider(withId: id)
+        var remider = reminder(withId: id)
         remider.isComplete.toggle()
+        
         updateReminder(remider)
+        updateSnapshot(reloading: [id])
     }
     
     // done button custom config
@@ -63,7 +83,9 @@ extension ReminderListViewController {
         let symbol = reminder.isComplete ? "circle.fill" : "circle"
         let symbolConfiguration = UIImage.SymbolConfiguration(textStyle: .title1)
         let image = UIImage(systemName: symbol, withConfiguration: symbolConfiguration)
-        let button = UIButton()
+        let button = ReminderDoneButton()
+        button.addTarget(self, action: #selector(didPressDoneButton(_ :)), for: .touchUpInside)
+        button.id = reminder.id
         button.setImage(image, for: .normal)
         
         return UICellAccessory.CustomViewConfiguration(customView: button,

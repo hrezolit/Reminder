@@ -20,7 +20,7 @@ struct Reminder: Identifiable {
 // Array where Element == Reminder
 extension [Reminder] {
     func indexOfReminder(withId id: Reminder.ID) -> Self.Index {
-        guard let index = firstIndex(where: { $0.id == id }) else { fatalError("Didn't finde any index") }
+        guard let index = firstIndex(where: { $0.id == id }) else { fatalError() }
         
         return index
     }
