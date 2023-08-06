@@ -9,6 +9,7 @@ import Foundation
 
 // reminder data model
 struct Reminder: Identifiable {
+    // generator of universall-unique values with String type
     var id = UUID().uuidString
     var title: String
     var dueDate: Date
@@ -16,6 +17,14 @@ struct Reminder: Identifiable {
     var isComplete: Bool = false
 }
 
+// Array where Element == Reminder
+extension [Reminder] {
+    func indexOfReminder(withId id: Reminder.ID) -> Self.Index {
+        guard let index = firstIndex(where: { $0.id == id }) else { fatalError("Didn't finde any index") }
+        
+        return index
+    }
+}
 
 #if DEBUG
 // sample reminders data
