@@ -45,10 +45,17 @@ extension ReminderListViewController {
         return reminders[index]
     }
     
-    // Update the cell registration handler to use the new method to retrieve the reminder with the provided id
+    // update the cell registration handler to use the new method to retrieve the reminder with the provided id
     func updateReminder(_ reminder: Reminder) {
         let index = reminders.indexOfReminder(withId: reminder.id)
         reminders[index] = reminder
+    }
+    
+    // fetchin a reminder from model
+    func completeReminder(withId id: Reminder.ID) {
+        var remider = remider(withId: id)
+        remider.isComplete.toggle()
+        updateReminder(remider)
     }
     
     // done button custom config
