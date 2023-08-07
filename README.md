@@ -1,9 +1,11 @@
+[![Swift Version][swift-image]][swift-url]
+
 # Reminder
 Reminder is a sample remind app for remind something)
 
 ## Table of contents
 * [Description](#general-info)
-* [Technologies](#technologies)
+* [Getting started](#technologies)
 * [Setup](#setup)
 
 ## Description
