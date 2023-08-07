@@ -4,7 +4,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/hrezolit/Reminder/tree/main/Reminder">
-    <img src="AppIcon1024" alt="Logo" width="80" height="80">
+    <img src="AppIcon1024@1.jpg" alt="Logo" width="80" height="80">
   </a>
 
   </p>
