@@ -1,11 +1,10 @@
 [![Swift Version][swift-image]][swift-url]
 ![Platform][platform-image]
-![AppIcon1024@1x](https://github.com/hrezolit/Reminder/assets/62234354/9401f22a-5dce-405f-b699-be98c74a90b5)
 # ReminderApp
 <br />
 <p align="center">
   <a href="https://github.com/hrezolit/Reminder/tree/main/Reminder">
-    <img src= alt="Logo" width="80" height="80">
+    <img src="AppIcon1024" alt="Logo" width="80" height="80">
   </a>
 
   </p>
