@@ -1,5 +1,5 @@
 [![Swift Version][swift-image]][swift-url]
-[![Platform][platform-image]]
+![Platform][platform-image]
 
 # Reminder
 Reminder is a sample remind app for remind something)
