@@ -35,3 +35,6 @@ $ cd ../lorem
 $ npm install
 $ npm start
 ```
+
+[swift-image]:https://img.shields.io/badge/swift-5.8.1-orange.svg
+[swift-url]: https://swift.org/
