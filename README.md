@@ -2,7 +2,7 @@
 ![Platform][platform-image]
 # ReminderApp
 <br />
-<p align="center">
+<p align="left">
   <a href="https://github.com/hrezolit/Reminder/tree/main/Reminder">
     <img src="https://github.com/hrezolit/Reminder/blob/main/Reminder/Assets.xcassets/AppIcon1024%401x.png" alt="Logo" width="200" height="200">
   </a>
