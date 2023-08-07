@@ -1,12 +1,14 @@
 [![Swift Version][swift-image]][swift-url]
 ![Platform][platform-image]
 
-# Reminder
+# ReminderApp
 Reminder is a sample remind app for remind something)
 
 ## Table of contents
-* [Description](#general-info)
-* [Getting started](#technologies)
+* [Description](#description)
+* [Getting started](#getting-started)
+* [Architecture](#architecture)
+* [Requirements](#requirements)
 * [Setup](#setup)
 
 ## Description
@@ -23,18 +25,17 @@ but also to use visual design and animation to present a muted, calm interface.
 ## Architecture
 * Reminder project is implemented using the Model-View-Controller(MVC) architecture pattern.
  
-## Technologies
+## Requirements
 Project is created with:
 * Xcode Version 14.3.1
-* iOS Deployment targe: iOS 16.4
+* iOS 16.4
 	
 ## Setup
 To run this project, install it locally using TestFlight:
 
-```
-$ cd ../lorem
-$ npm install
-$ npm start
+```swift
+import UIKit
+
 ```
 
 [swift-image]:https://img.shields.io/badge/swift-5.8.1-orange.svg
