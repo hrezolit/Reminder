@@ -28,7 +28,7 @@ extension ReminderListViewController {
         var snapshot = Snapshot()
         snapshot.appendSections([0])
         snapshot.appendItems(Reminder.sampleData.map { $0.id })
-        snapshot.appendItems(reminders.map { $0.id})
+        snapshot.appendItems(reminders.map { $0.id })
         
         if !ids.isEmpty {
             snapshot.reloadItems(ids)
@@ -52,7 +52,7 @@ extension ReminderListViewController {
         
         // done button common config
         var doneButtonConfiguration = doneButtonConfiguration(for: reminder)
-        doneButtonConfiguration.tintColor = .todayListCellDoneButtonTint
+        doneButtonConfiguration.tintColor = .reminderListCellDoneButtonTint
         cell.accessibilityCustomActions = [
             doneButtonAccessibilityAction(for: reminder)
         ]
@@ -64,7 +64,7 @@ extension ReminderListViewController {
         
         // background config
         var backgroundConfiguration = UIBackgroundConfiguration.listGroupedCell()
-        backgroundConfiguration.backgroundColor = .todayListCellBackground
+        backgroundConfiguration.backgroundColor = .reminderListCellBackground
         cell.backgroundConfiguration = backgroundConfiguration
     }
     
