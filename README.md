@@ -5,10 +5,9 @@
 <br />
 <p align="center">
   <a href="https://github.com/alexanderritik/Best-README-Template">
-    <img src="logo.jpeg" alt="Logo" width="80" height="80">
+    <img src="![AppIcon1024@1x](https://github.com/hrezolit/Reminder/assets/62234354/9401f22a-5dce-405f-b699-be98c74a90b5)" alt="Logo" width="80" height="80">
   </a>
-  <p align="center">
-    One to two paragraph statement about your product and what it does.
+
   </p>
 </p>
 Reminder is a sample remind app for remind something)
