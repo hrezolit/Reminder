@@ -4,8 +4,8 @@
 # ReminderApp
 <br />
 <p align="center">
-  <a href="https://github.com/alexanderritik/Best-README-Template">
-    <img src="![AppIcon1024@1x](https://github.com/hrezolit/Reminder/assets/62234354/9401f22a-5dce-405f-b699-be98c74a90b5)" alt="Logo" width="80" height="80">
+  <a href="https://github.com/hrezolit/Reminder/tree/main/Reminder">
+    <img src=![AppIcon1024@1x](https://github.com/hrezolit/Reminder/assets/62234354/9401f22a-5dce-405f-b699-be98c74a90b5) alt="Logo" width="80" height="80">
   </a>
 
   </p>
