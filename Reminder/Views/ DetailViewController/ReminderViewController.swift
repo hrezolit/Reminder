@@ -7,9 +7,12 @@
 
 import UIKit
 
+/// The class lays out the list of reminder details and supplies the list with the reminder details data.
 class ReminderViewController: UICollectionViewController {
     
     private typealias DataSource = UICollectionViewDiffableDataSource<Int, Row>
+    private typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Row>
+    
     private var dataSource: DataSource!
     
     var reminder: Reminder
