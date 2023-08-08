@@ -66,4 +66,8 @@ class ReminderViewController: UICollectionViewController {
             return reminder.title
         }
     }
+    
+    func updateSnapshot() {
+        
+    }
 }
