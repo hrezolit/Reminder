@@ -42,6 +42,8 @@ class ReminderViewController: UICollectionViewController {
                                                                 for: indexPath,
                                                                 item: itemIdentifier)
         }
+        
+        updateSnapshot()
     }
     
     func cellRegistrationHandler(cell: UICollectionViewListCell, indexPath: IndexPath, row: Row) {
@@ -69,5 +71,8 @@ class ReminderViewController: UICollectionViewController {
     
     func updateSnapshot() {
         var snapshot = Snapshot()
+        snapshot.appendItems([Row.date, Row.notes, Row.time, Row.title], toSection: 0)
+        dataSource.apply(snapshot)
+        
     }
 }
