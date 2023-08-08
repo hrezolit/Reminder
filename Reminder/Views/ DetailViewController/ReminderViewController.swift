@@ -51,6 +51,7 @@ class ReminderViewController: UICollectionViewController {
         contentConfiguration.image = row.image
         
         cell.contentConfiguration = contentConfiguration
+        cell.tintColor = .reminderPrimaryTint
     }
     
     func text(for row: Row) -> String? {
