@@ -68,6 +68,6 @@ class ReminderViewController: UICollectionViewController {
     }
     
     func updateSnapshot() {
-        
+        var snapshot = Snapshot()
     }
 }
