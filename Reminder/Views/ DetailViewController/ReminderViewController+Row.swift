@@ -25,6 +25,8 @@ extension ReminderViewController {
                 return "clock"
             case .title:
                 return nil
+            case .header(_):
+                return nil
             }
         }
         
