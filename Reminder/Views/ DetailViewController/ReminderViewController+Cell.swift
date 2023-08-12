@@ -1,5 +1,5 @@
 //
-//  ReminderViewController+CellConfiguration.swift
+//  ReminderViewController+Cell.swift
 //  Reminder
 //
 //  Created by Nikita on 11/8/23.
@@ -27,6 +27,20 @@ extension ReminderViewController {
     func titleConfiguration(for cell: UICollectionViewListCell, with title: String?) -> TextFieldContentView.Configuration {
         var contentConfiguration = cell.textFieldConfiguration()
         contentConfiguration.text = title
+        
+        return contentConfiguration
+    }
+    
+    func dateConfiguration(for cell: UICollectionViewListCell, with date: Date) -> DatePickerContentView.Configuration {
+        var contentConfiguration = cell.datePickerConfiguration()
+        contentConfiguration.date = date
+        
+        return contentConfiguration
+    }
+    
+    func notesConfiguration(for cell: UICollectionViewListCell, with notes: String?) -> TextViewContentView.Configuration {
+        var contentConfiguration = cell.textViewConfiguration()
+        contentConfiguration.text = notes
         
         return contentConfiguration
     }
