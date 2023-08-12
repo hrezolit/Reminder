@@ -14,6 +14,7 @@ extension ReminderViewController {
         case date
         case time
         case title
+        case editableText(String)
         
         var imageName: String? {
             switch self {
@@ -23,9 +24,7 @@ extension ReminderViewController {
                 return "square.and.pencile"
             case .time:
                 return "clock"
-            case .title:
-                return nil
-            case .header(_):
+            default:
                 return nil
             }
         }
