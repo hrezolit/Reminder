@@ -85,6 +85,7 @@ class ReminderViewController: UICollectionViewController {
     }
     
     private func prepareForViewing() {
+        navigationItem.leftBarButtonItem = nil
         if workingReminder != reminder {
             reminder = workingReminder
         }
@@ -92,7 +93,13 @@ class ReminderViewController: UICollectionViewController {
     }
     
     private func prepareForEditing() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelEdit))
         updateSnapshotForEditing()
+    }
+    
+    @objc func didCancelEdit() {
+        workingReminder = reminder
+        setEditing(false, animated: true)
     }
     
     private func updateSnapshotForEditing() {
