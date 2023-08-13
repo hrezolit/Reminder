@@ -15,9 +15,11 @@ class ReminderViewController: UICollectionViewController {
     
     private var dataSource: DataSource!
     
+    var workingReminder: Reminder
     var reminder: Reminder
     
     init(reminder: Reminder) {
+        self.workingReminder = reminder
         self.reminder = reminder
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
@@ -57,9 +59,9 @@ class ReminderViewController: UICollectionViewController {
         super.setEditing(editing, animated: animated)
         
         if isEditing {
-            updateSnapshotForEditing()
+            prepareForEditing()
         } else {
-            updateSnapshotForViewing()
+            prepareForViewing()
         }
     }
     
@@ -80,6 +82,17 @@ class ReminderViewController: UICollectionViewController {
             fatalError("Unexpected combination of section and row.")
         }
         cell.tintColor = .reminderPrimaryTint
+    }
+    
+    private func prepareForViewing() {
+        if workingReminder != reminder {
+            reminder = workingReminder
+        }
+        updateSnapshotForViewing()
+    }
+    
+    private func prepareForEditing() {
+        updateSnapshotForEditing()
     }
     
     private func updateSnapshotForEditing() {
