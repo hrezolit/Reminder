@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 extension ReminderViewController {
     func defaultConfiguration(for cell: UICollectionViewListCell, at row: Row) -> UIListContentConfiguration {
         var contentConfiguration = cell.defaultContentConfiguration()
