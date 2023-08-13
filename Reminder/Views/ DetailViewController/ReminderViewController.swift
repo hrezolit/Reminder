@@ -15,12 +15,18 @@ class ReminderViewController: UICollectionViewController {
     
     private var dataSource: DataSource!
     
+    var reminder: Reminder {
+        didSet {
+            onChange(reminder)
+        }
+    }
     var workingReminder: Reminder
-    var reminder: Reminder
+    var onChange: (Reminder) -> Void
     
-    init(reminder: Reminder) {
+    init(reminder: Reminder, onChange: @escaping (Reminder) -> Void) {
         self.workingReminder = reminder
         self.reminder = reminder
+        self.onChange = onChange
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .insetGrouped)
         listConfiguration.showsSeparators = false
         listConfiguration.headerMode = .firstItemInSection
