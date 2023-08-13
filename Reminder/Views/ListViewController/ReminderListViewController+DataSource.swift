@@ -27,7 +27,6 @@ extension ReminderListViewController {
         // initializing snapshot
         var snapshot = Snapshot()
         snapshot.appendSections([0])
-        snapshot.appendItems(Reminder.sampleData.map { $0.id })
         snapshot.appendItems(reminders.map { $0.id })
         
         if !ids.isEmpty {
@@ -85,13 +84,17 @@ extension ReminderListViewController {
     func completeReminder(withId id: Reminder.ID) {
         var remider = reminder(withId: id)
         remider.isComplete.toggle()
-        
         updateReminder(remider)
         updateSnapshot(reloading: [id])
     }
     
     func addReminder(_ reminder: Reminder) {
         reminders.append(reminder)
+    }
+
+    func deleteReminder(withId id: Reminder.ID) {
+        let index = reminders.indexOfReminder(withId: id)
+        reminders.remove(at: index)
     }
     
     // preparing for VoiceOver accessibility
