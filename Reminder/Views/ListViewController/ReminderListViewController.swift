@@ -11,6 +11,12 @@ class ReminderListViewController: UICollectionViewController {
     
     var dataSource: DataSource!
     var reminders: [Reminder] = Reminder.sampleData
+    var listStyle: ReminderListStyle = .today
+    var filterReminders: [Reminder] {
+        return reminders.filter { listStyle.shouldInclude(date: $0.dueDate) }.sorted {
+            $0.dueDate > $1.dueDate
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +51,7 @@ class ReminderListViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        let id = reminders[indexPath.item].id
+        let id = filterReminders[indexPath.item].id
         pushDetailViewForReminder(withId: id)
         return false
     }
