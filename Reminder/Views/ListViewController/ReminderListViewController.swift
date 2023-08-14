@@ -18,6 +18,12 @@ class ReminderListViewController: UICollectionViewController {
         }
     }
     
+    let listStyleSegmentedControl = UISegmentedControl(items: [
+        ReminderListStyle.all.name,
+        ReminderListStyle.today.name,
+        ReminderListStyle.future.name
+    ])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +46,9 @@ class ReminderListViewController: UICollectionViewController {
         let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(didPressAddButton(_ :)))
         addButton.accessibilityLabel = NSLocalizedString("Add reminder", comment: "Add button accessibility label")
         navigationItem.rightBarButtonItem = addButton
+        
+        listStyleSegmentedControl.selectedSegmentIndex = listStyle.rawValue
+        navigationItem.titleView = listStyleSegmentedControl
         
         if #available(iOS 16, *) {
             navigationItem.style = .navigator
