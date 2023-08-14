@@ -19,6 +19,15 @@ class ReminderListViewController: UICollectionViewController {
         }
     }
     
+    var progress: CGFloat {
+        let pieceSize = 1.0 / CGFloat(filterReminders.count)
+        let progress = filterReminders.reduce(0.0) {
+            let piece = $1.isComplete ? pieceSize : 0
+            return $0 + piece
+        }
+        return progress
+    }
+    
     let listStyleSegmentedControl = UISegmentedControl(items: [
         ReminderListStyle.all.name,
         ReminderListStyle.today.name,
@@ -72,6 +81,15 @@ class ReminderListViewController: UICollectionViewController {
         let id = filterReminders[indexPath.item].id
         pushDetailViewForReminder(withId: id)
         return false
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String,at indexPath: IndexPath) {
+        
+        guard elementKind == ProgressHeaderView.elementKind,
+              let progressView = view as? ProgressHeaderView
+        else { return }
+        
+        progressView.progress = progress
     }
     
     func pushDetailViewForReminder(withId id: Reminder.ID) {

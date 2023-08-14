@@ -36,7 +36,9 @@ extension ReminderListViewController {
         if !ids.isEmpty {
             snapshot.reloadItems(ids)
         }
-            dataSource.apply(snapshot)
+        
+        dataSource.apply(snapshot)
+        headerView?.progress = progress
     }
     
     // cell registration and configuration
@@ -95,7 +97,7 @@ extension ReminderListViewController {
     func addReminder(_ reminder: Reminder) {
         reminders.append(reminder)
     }
-
+    
     func deleteReminder(withId id: Reminder.ID) {
         let index = reminders.indexOfReminder(withId: id)
         reminders.remove(at: index)
