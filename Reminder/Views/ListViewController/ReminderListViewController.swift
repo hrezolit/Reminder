@@ -10,7 +10,7 @@ import UIKit
 class ReminderListViewController: UICollectionViewController {
     
     var dataSource: DataSource!
-    var reminders: [Reminder] = Reminder.sampleData
+    var reminders: [Reminder] = []
     var listStyle: ReminderListStyle = .today
     var headerView: ProgressHeaderView?
     var filterReminders: [Reminder] {
@@ -76,6 +76,8 @@ class ReminderListViewController: UICollectionViewController {
         
         collectionView.dataSource = dataSource
         collectionView.backgroundColor = .reminderGradientFutureBegin
+        
+        prepareReminderStore()
     }
     
     override func viewWillAppear(_ animated: Bool) {
