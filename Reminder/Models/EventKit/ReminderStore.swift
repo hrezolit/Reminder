@@ -17,4 +17,19 @@ final class ReminderStroe {
     var isAvailable: Bool {
         EKEventStore.authorizationStatus(for: .reminder) == .authorized
     }
+    
+    func readAll() async throws -> [Reminder] {
+        guard isAvailable else { throw ReminderError.accesDenied }
+        
+        let predicate = ekStore.predicateForReminders(in: nil)
+        let ekReminders = try await ekStore.reminders(matching: predicate)
+        let reminders: [Reminder] = try ekReminders.compactMap { ekReminder in
+            do {
+                return try Reminder(with: ekReminder)
+            } catch ReminderError.reminderHasNoDueDate {
+                return nil
+            }
+        }
+        return reminders
+    }
 }
