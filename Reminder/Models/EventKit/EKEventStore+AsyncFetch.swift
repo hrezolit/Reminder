@@ -16,7 +16,7 @@ extension EKEventStore {
                 if let reminders {
                     continuation.resume(returning: reminders)
                 } else {
-                    continuation.resume(returning: ReminderError.failedReadingReminders)
+                    continuation.resume(throwing: ReminderError.failedReadingReminders)
                 }
                 
             }
