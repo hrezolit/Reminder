@@ -20,11 +20,13 @@ class ProgressHeaderView: UICollectionReusableView {
         }
     }
     
+    // MARK: - private properties
     private let upperView = UIView(frame: .zero)
     private let lowerView = UIView(frame: .zero)
     private let containerView = UIView(frame: .zero)
     private var heightConstraint: NSLayoutConstraint?
     
+    // MARK: - init
     override init(frame: CGRect) {
         super.init(frame: frame)
         prepareSubviews()
@@ -34,6 +36,7 @@ class ProgressHeaderView: UICollectionReusableView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - methods
     override func layoutSubviews() {
         super.layoutSubviews()
         

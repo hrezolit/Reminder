@@ -9,6 +9,7 @@ import Foundation
 
 // reminder data model
 struct Reminder: Identifiable, Equatable {
+    
     // generator of universall-unique values with String type
     var id = UUID().uuidString
     var title: String

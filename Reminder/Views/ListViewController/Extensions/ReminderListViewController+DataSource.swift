@@ -9,10 +9,12 @@ import UIKit
 
 extension ReminderListViewController {
     
+    // MARK: - typealias
     typealias DataSource = UICollectionViewDiffableDataSource<Int, Reminder.ID>
     // snapshot represents the state of data at a specific point in time
     typealias Snapshot = NSDiffableDataSourceSnapshot<Int, Reminder.ID>
     
+    // MARK: - properties
     var reminderCompletedValue: String {
         NSLocalizedString("Completed", comment: "Reminder complited value")
     }
@@ -22,6 +24,8 @@ extension ReminderListViewController {
     }
     
     private var reminderStore: ReminderStroe { ReminderStroe.shared }
+    
+    // MARK: - public methods
     
     // method for updating snapshot
     func updateSnapshot(reloading idsThatChange: [Reminder.ID] = []) {
@@ -97,7 +101,16 @@ extension ReminderListViewController {
     }
     
     func addReminder(_ reminder: Reminder) {
-        reminders.append(reminder)
+        var reminder = reminder
+        do {
+            let idFromStore = try reminderStore.save(reminder)
+            reminder.id = idFromStore
+            reminders.append(reminder)
+        } catch ReminderError.accesDenied {
+            
+        } catch {
+            showError(error)
+        }
     }
     
     func deleteReminder(withId id: Reminder.ID) {
@@ -140,6 +153,8 @@ extension ReminderListViewController {
         }
         return action
     }
+    
+    // MARK: - private methods
     
     // done button custom config
     private func doneButtonConfiguration(for reminder: Reminder) -> UICellAccessory.CustomViewConfiguration {

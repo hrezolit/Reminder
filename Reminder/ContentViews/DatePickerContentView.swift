@@ -9,6 +9,7 @@ import UIKit
 
 class DatePickerContentView: UIView, UIContentView {
     
+    // MARK: - struct "Configuration"
     struct Configuration: UIContentConfiguration {
         
         var date: Date = .now
@@ -19,6 +20,7 @@ class DatePickerContentView: UIView, UIContentView {
         }
     }
     
+    // MARK: - properties
     let datePicker = UIDatePicker()
     
     var configuration: UIContentConfiguration {
@@ -27,6 +29,7 @@ class DatePickerContentView: UIView, UIContentView {
         }
     }
     
+    // MARK: - init
     init(_ configuration: UIContentConfiguration) {
         self.configuration = configuration
         super.init(frame: .zero)
@@ -39,6 +42,7 @@ class DatePickerContentView: UIView, UIContentView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - init
     func configure(configuration: UIContentConfiguration) {
         guard let configuration = configuration as? Configuration else { return }
         datePicker.date = configuration.date
@@ -50,6 +54,7 @@ class DatePickerContentView: UIView, UIContentView {
     }
 }
 
+// MARK: - extension
 extension UICollectionViewListCell {
     
     func datePickerConfiguration() -> DatePickerContentView.Configuration {

@@ -9,6 +9,7 @@ import UIKit
 
 class TextViewContentView: UIView, UIContentView {
     
+    // MARK: - struct "Configuration"
     struct Configuration: UIContentConfiguration {
         
         var text: String? = ""
@@ -19,6 +20,7 @@ class TextViewContentView: UIView, UIContentView {
         }
     }
     
+    // MARK: - properties
     let textView = UITextView()
     var configuration: UIContentConfiguration {
         didSet {
@@ -29,6 +31,7 @@ class TextViewContentView: UIView, UIContentView {
         CGSize(width: 0, height: 44)
     }
     
+    // MARK: - init
     init(_ configuration: UIContentConfiguration) {
         self.configuration = configuration
         super.init(frame: .zero)
@@ -42,12 +45,14 @@ class TextViewContentView: UIView, UIContentView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - method
     func configure(configuration: UIContentConfiguration) {
         guard let configuration = configuration as? Configuration else { return }
         textView.text = configuration.text
     }
 }
 
+// MARK: - extension
 extension UICollectionViewListCell {
     func textViewConfiguration() -> TextViewContentView.Configuration {
         TextViewContentView.Configuration()

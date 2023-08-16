@@ -10,9 +10,12 @@ import UIKit
 /// The class lays out the list of reminder details and supplies the list with the reminder details data.
 class ReminderViewController: UICollectionViewController {
     
+    // MARK: - typealias
     private typealias DataSource = UICollectionViewDiffableDataSource<Section, Row>
     private typealias Snapshot = NSDiffableDataSourceSnapshot<Section, Row>
     
+    
+    //MARK: - properties
     private var dataSource: DataSource!
     
     var reminder: Reminder {
@@ -24,6 +27,7 @@ class ReminderViewController: UICollectionViewController {
     var workingReminder: Reminder
     var onChange: (Reminder) -> Void
     
+    // MARK: - init
     init(reminder: Reminder, onChange: @escaping (Reminder) -> Void) {
         self.workingReminder = reminder
         self.reminder = reminder
@@ -39,6 +43,7 @@ class ReminderViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,6 +100,13 @@ class ReminderViewController: UICollectionViewController {
         cell.tintColor = .reminderPrimaryTint
     }
     
+    // MARK: - @objc
+    @objc func didCancelEdit() {
+        workingReminder = reminder
+        setEditing(false, animated: true)
+    }
+    
+    // MARK: - private methods
     private func prepareForViewing() {
         navigationItem.leftBarButtonItem = nil
         if workingReminder != reminder {
@@ -107,12 +119,7 @@ class ReminderViewController: UICollectionViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(didCancelEdit))
         updateSnapshotForEditing()
     }
-    
-    @objc func didCancelEdit() {
-        workingReminder = reminder
-        setEditing(false, animated: true)
-    }
-    
+
     private func updateSnapshotForEditing() {
         var snapshot = Snapshot()
         snapshot.appendSections([.title, .date, .notes])

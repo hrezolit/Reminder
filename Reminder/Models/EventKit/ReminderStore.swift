@@ -18,6 +18,8 @@ final class ReminderStroe {
         EKEventStore.authorizationStatus(for: .reminder) == .authorized
     }
     
+    // MARK: - methods
+    
     func requestAccess() async throws {
         let status = EKEventStore.authorizationStatus(for: .reminder)
         

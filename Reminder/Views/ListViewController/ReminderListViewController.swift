@@ -9,6 +9,7 @@ import UIKit
 
 class ReminderListViewController: UICollectionViewController {
     
+    // MARK: - properties
     var dataSource: DataSource!
     var reminders: [Reminder] = []
     var listStyle: ReminderListStyle = .today
@@ -80,12 +81,13 @@ class ReminderListViewController: UICollectionViewController {
         prepareReminderStore()
     }
     
+    // MARK: - viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         refreshBacground()
     }
     
-    // MARK: - methods
+    // MARK: - public methods
     override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
         let id = filterReminders[indexPath.item].id
         pushDetailViewForReminder(withId: id)
@@ -129,7 +131,8 @@ class ReminderListViewController: UICollectionViewController {
         present(alert, animated: true)
     }
     
-    // MARK: - listLayout
+    // MARK: - private methods
+    
     // new list configuration variable with the grouped appearance
     private func listLayout() -> UICollectionViewCompositionalLayout {
         var listConfiguration = UICollectionLayoutListConfiguration(appearance: .grouped)
