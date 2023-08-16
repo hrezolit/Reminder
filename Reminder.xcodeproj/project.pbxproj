@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D55C76AC2A8C890D00CD5D9F /* EKReminder+Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55C76AB2A8C890D00CD5D9F /* EKReminder+Reminder.swift */; };
 		D581B17E2A80E029006C29C9 /* UIColor+Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D581B17D2A80E029006C29C9 /* UIColor+Reminder.swift */; };
 		D581B1802A80E43B006C29C9 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D581B17F2A80E43B006C29C9 /* ReminderViewController.swift */; };
 		D581B1832A822D6F006C29C9 /* ReminderViewController+Row.swift in Sources */ = {isa = PBXBuildFile; fileRef = D581B1822A822D6F006C29C9 /* ReminderViewController+Row.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D55C76AB2A8C890D00CD5D9F /* EKReminder+Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EKReminder+Reminder.swift"; sourceTree = "<group>"; };
 		D581B17D2A80E029006C29C9 /* UIColor+Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Reminder.swift"; sourceTree = "<group>"; };
 		D581B17F2A80E43B006C29C9 /* ReminderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		D581B1822A822D6F006C29C9 /* ReminderViewController+Row.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ReminderViewController+Row.swift"; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 			children = (
 				D5B8484D2A7BD80400B327B6 /* Reminder.swift */,
 				D5EFD6292A89CFE4009A28E1 /* ReminderListStyle.swift */,
+				D55C76AB2A8C890D00CD5D9F /* EKReminder+Reminder.swift */,
 				D59EF93E2A8B2BA4009676E9 /* EventKit */,
 			);
 			path = Models;
@@ -293,6 +296,7 @@
 				D5EFD62E2A8A2670009A28E1 /* CAGradientLayer+ListStyle.swift in Sources */,
 				D5B848502A7BDB3900B327B6 /* ReminderListViewController.swift in Sources */,
 				D59EF93D2A8B2B8B009676E9 /* ReminderStore.swift in Sources */,
+				D55C76AC2A8C890D00CD5D9F /* EKReminder+Reminder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
