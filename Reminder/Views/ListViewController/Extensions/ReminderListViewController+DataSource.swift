@@ -105,11 +105,19 @@ extension ReminderListViewController {
         reminders.remove(at: index)
     }
     
+    func reminderStoreChanged() {
+        Task {
+            reminders = try await reminderStore.readAll()
+            updateSnapshot()
+        }
+    }
+    
     func prepareReminderStore() {
         Task {
             do {
                 try await reminderStore.requestAccess()
                 reminders = try await reminderStore.readAll()
+                NotificationCenter.default.addObserver(self, selector: #selector(eventStoreChanged(_ :)), name: .EKEventStoreChanged, object: nil)
             } catch ReminderError.accesDenied, ReminderError.accessRestricted {
                 
                 #if DEBUG
