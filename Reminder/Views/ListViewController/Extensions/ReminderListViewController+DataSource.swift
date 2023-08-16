@@ -88,8 +88,15 @@ extension ReminderListViewController {
     
     // update the cell registration handler to use the new method to retrieve the reminder with the provided id
     func updateReminder(_ reminder: Reminder) {
-        let index = reminders.indexOfReminder(withId: reminder.id)
-        reminders[index] = reminder
+        do {
+            try reminderStore.save(reminder)
+            let index = reminders.indexOfReminder(withId: reminder.id)
+            reminders[index] = reminder
+        } catch ReminderError.accesDenied {
+            
+        } catch {
+            showError(error)
+        }
     }
     
     // fetchin a reminder from model
